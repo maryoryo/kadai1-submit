@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--    縦30%のガイドライン-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+    <!--    横15%のガイドライン-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+    <!--    横30%のガイドライン-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <!--    上部30%の黒背景-->
+    <View
+        android:id="@+id/backImageViewTop"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline3"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--    左の青背景-->
+    <View
+        android:id="@+id/backImageViewLeft"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+    <!--    右の黄色背景-->
+    <View
+        android:id="@+id/backImageViewRight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/yellow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <!--    上部の数字-->
+    <ImageView
+        android:id="@+id/number1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/number2"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/number_1" />
+
+    <ImageView
+        android:id="@+id/number2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/number1"
+        app:layout_constraintEnd_toStartOf="@+id/number3"
+        app:layout_constraintStart_toEndOf="@+id/number1"
+        app:layout_constraintTop_toTopOf="@+id/number1"
+        android:src="@drawable/number_2" />
+
+    <ImageView
+        android:id="@+id/number3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/number1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/number2"
+        app:layout_constraintTop_toTopOf="@+id/number1"
+        android:src="@drawable/number_3" />
+
+    <ImageView
+        android:id="@+id/number4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline3"
+        app:layout_constraintEnd_toStartOf="@id/number5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        android:src="@drawable/number_4" />
+
+    <ImageView
+        android:id="@+id/number5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/number4"
+        app:layout_constraintTop_toTopOf="@id/guideline2"
+        android:src="@drawable/number_5" />
+    <!--    左の画像-->
+    <ImageView
+        android:id="@+id/waremono"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        android:src="@drawable/care_mark_t1_waremono" />
+    <!--        右の画像-->
+    <ImageView
+        android:id="@+id/neko"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="@id/guideline3"
+        android:src="@drawable/cat2_2_surprise" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
